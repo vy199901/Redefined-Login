@@ -1,7 +1,6 @@
 package com.caliber.Authentication.service;
 
 import java.security.SecureRandom;
-import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
