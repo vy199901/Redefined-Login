@@ -118,8 +118,9 @@ to {
 								<div class="p-5">
 									<div class="text-center">
 										<h1 class="h4 text-gray-900 mb-2 font-weight-bold">
-											<b>Login Here?</b>
+											<b>Login Here?</b><br>
 										</h1>
+										<span class="text-danger">${error}</span> 
 										<p class="mb-4" style="text-align: justify;">Please enter
 											your USER-NAME, and click on Submit. You will be redirected
 											to enter your password, try the redefined Login Experience!</p>
@@ -132,7 +133,6 @@ to {
 									<div class="d-grid p-2 px-5">
 										<button class="btn btn-sm btn-success font-weight-bold"
 											onclick="submitUserName()">SUBMIT</button>
-											<span class="text-danger">${errormsg}</span> 
 									</div>
 									
 									
@@ -260,17 +260,20 @@ to {
 					success : function(result) {
 						var response = result;
 
-						if (response > 0) {
+						if (response == 200) {
+							// User Exist Proceed to enter password
 							$('#inputUserName').collapse('hide');
 							$('#inputPassword').collapse('show');
 							$('#hiddenUserName').val(userId);
 							//  $('#hidden_userId').val(userId);
-						} else if (response == -1) {
-							window.location.href = "blocked";
-						} else if (response == -2) {
-							window.location.href = "login";
-						} else {
+						} else if (response == 403) {
+							// Account blocked permanently
+							alert("Your Account has been blocked permanently. Please Contact Administrator.");
+						} else if (response == 404) {
 							alert("Username does not exist");
+						} else {
+							// window.location.href = "login";
+							alert("Unecessary Error Faced, Please try again.");
 						}
 
 					},

@@ -45,14 +45,29 @@ public class UserService {
 		 User user = userRepository.findByUsername(username);
 		 user.setPassword(randomPass);
 		 int count=userRepository.findByUsername(username).getCounter();
-		 user.setCounter(count+1);
+//		 user.setCounter(count+1);
 		 userRepository.save(user);
 		 javaMailSender.send(message);
 	}
+	
+	public boolean setCounter(String username, int counter) {
+		User user = userRepository.findByUsername(username);
+		if(user != null) {
+			user.setCounter(counter);
+			userRepository.save(user);
+			return true;
+		}
+		return false;
+	}
+	
 	public int returnCounter(String username) {
-		int count=0;
-		
-		 count=userRepository.findByUsername(username).getCounter();
+		int count=-1;
+		 User user = userRepository.findByUsername(username);
+		 
+		 if(user != null) {
+			 count = user.getCounter();
+		 }
+			
 		 return count;
 
 	}
