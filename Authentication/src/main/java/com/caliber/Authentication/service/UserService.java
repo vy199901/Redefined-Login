@@ -45,6 +45,8 @@ public class UserService {
 		 message.setText(randomPass);
 		 User user = userRepository.findByUsername(username);
 		 user.setPassword(randomPass);
+		 int count=userRepository.findByUsername(username).getCounter();
+		 user.setCounter(count+1);
 		 userRepository.save(user);
 		 javaMailSender.send(message);
 	}

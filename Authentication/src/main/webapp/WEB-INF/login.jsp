@@ -132,8 +132,10 @@ to {
 									<div class="d-grid p-2 px-5">
 										<button class="btn btn-sm btn-success font-weight-bold"
 											onclick="submitUserName()">SUBMIT</button>
+											<span class="text-danger">${errormsg}</span> 
 									</div>
-									${errormsg}
+									
+									
 									<hr>
 									<div class="text-sm-center">
 										<a class="small text-decoration-none" href="/register">Create
@@ -265,11 +267,9 @@ to {
 							//  $('#hidden_userId').val(userId);
 						} else if (response == -1) {
 							window.location.href = "blocked";
-						}
-						else if(response==-2){
+						} else if (response == -2) {
 							window.location.href = "login";
-						} 
-						else {
+						} else {
 							alert("Username does not exist");
 						}
 
@@ -278,7 +278,7 @@ to {
 						alert("Error Faced, Please try Again!!!!");
 					}
 				});
-
+				
 				/* $.ajax({
 				    type: "POST",
 				    url: "blocked",
@@ -313,8 +313,6 @@ to {
 
 			}
 		}
-		
-		
 	</script>
 
 </body>
