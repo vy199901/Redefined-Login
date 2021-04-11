@@ -138,11 +138,10 @@ to {
 									
 									<hr>
 									<div class="text-sm-center">
-										<a class="small text-decoration-none" href="/register">Create
+										|<a class="small text-decoration-none" href="/register">Create
 											an Account !</a>
-
-										<!-- |
-										<a class="small text-decoration-none" href="/forgot">Forgot Password ?</a> | -->
+										 ||
+										<a class="small text-decoration-none" href="/reset">Reset Password ?</a> |
 									</div>
 								</div>
 							</div>

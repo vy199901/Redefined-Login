@@ -1,5 +1,7 @@
 package com.caliber.Authentication.controller;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.caliber.Authentication.service.UserService;
+import com.fasterxml.jackson.core.io.JsonStringEncoder;
+import com.google.gson.Gson;
 
 @Controller
 public class AuthenticationController {
@@ -61,16 +65,36 @@ public class AuthenticationController {
 			// Unecessary error occoured 
 			return -1;
 		}
-			
+	}
+	
+	@PostMapping(value = "/validateCredentials")
+	@ResponseBody
+	public Integer resetPageVerification(@RequestBody String json) {
 
-		/*
-		 * if (counter < 3 || counter == 4) { if (inputToken > 0) {
-		 * System.out.println("User Found Password Length:" + inputToken); return
-		 * inputToken; } else { System.out.println("User Not Found Password Length:" +
-		 * inputToken); return inputToken; } } else if (counter == 3) {
-		 * System.out.println("Blocked page yee"); // userService.sendEmail(user); //
-		 * int count = userService.countdown(user); return -1; } else { return -2; }
-		 */
+		System.out.println(json);
+		
+		Gson g = new Gson();  
+		String str = g.toJson(json); 
+		
+		
+		System.out.println(str);
+		
+//		JSONObject jsonobj = new JSONObject();
+//		jsonobj = jsonValue;
+		
+//		JSONArray array = new JSONArray(json);  
+//		for(int i=0; i < array.length(); i++)   
+//		{  
+//		JSONObject object = array.getJSONObject(i);  
+//		System.out.println(object.getString("No"));  
+//		System.out.println(object.getString("Name"));  
+//		}  
+//		JSONObject jsonObj = new JSONObject();
+//
+//		String name=json.toJSONString();
+//		System.out.println(name);
+
+		return 1;
 	}
 
 	/* Dynamic Token Initialization and Setup */
@@ -139,6 +163,12 @@ public class AuthenticationController {
 	public String blockAccountPage() {
 
 		return "blocked";
+	}
+	
+	@GetMapping(value = "/reset")
+	public String resetPage() {
+
+		return "reset";
 	}
 
 }
