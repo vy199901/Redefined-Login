@@ -155,7 +155,7 @@ to {
 								<div class="p-5">
 									<div class="text-center">
 										<h1 class="h4 text-gray-900 mb-2 font-weight-bold">
-											<b>Verify Password ?</b>
+											<b>Verify Password ?</b>  <img src="looking_eye.gif" width=10% height="10%"/>
 										</h1>
 									</div>
 									<form action="" method="POST">
