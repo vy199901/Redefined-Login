@@ -50,6 +50,7 @@
 										<h1 class="h4 text-gray-900 mb-2 font-weight-bold">
 											<b>Reset Password ?</b>  <img src="looking_eye.gif" width=10% height="10%"/>
 										</h1>
+										<span class="text-danger">${error}</span> 
 										<p class="mb-4" style="text-align: justify;">Please verify
 											your User-Name and Password. Before proceeding further.</p>
 									</div>
@@ -198,13 +199,16 @@
 					cache : false,
 					success : function(result) {
 						var response = result;
-						
 
-						$('#validateCredentials').collapse('hide');
-						$('#inputPassword').collapse('show');
-						$('#hiddenUserName').val(userName);
-						$('#hiddenPassword').val(password);
-						alert(result);
+						if(response == 1){
+							$('#validateCredentials').collapse('hide');
+							$('#inputPassword').collapse('show');
+							$('#hiddenUserName').val(userName);
+							$('#hiddenPassword').val(password);
+						}else{
+							alert("Credentials are incorrect, Please try Again.");
+							}
+						
 						/* if (response == 200) {
 							$('#inputUserName').collapse('hide');
 							$('#inputPassword').collapse('show');

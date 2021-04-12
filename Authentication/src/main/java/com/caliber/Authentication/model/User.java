@@ -22,6 +22,6 @@ public class User {
 	private String password;
 	private String emailId;
 	private Integer counter;
-	private Integer status;
+	private String otp;
 	
 }
