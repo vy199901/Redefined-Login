@@ -146,7 +146,7 @@
 										<h1 class="h3 text-gray-900 mb-2 font-weight-bold">
 											<b>Help Section</b>
 										</h1>
-										<p class="" style="text-align: justify;">OTP has been sent to your registered Email ID. Enter OTP and new password. </p>
+										<p class="text-success" style="text-align: justify;"> OTP has been sent to your registered Email ID.</p>
 										<p class="font-weight-bold text-success">Check Registered Email ID</p>
 										<p class="mb-4" style="text-align: justify;">Lorem ipsum
 											dolor sit amet consectetur elit. Necessitatibus beatae

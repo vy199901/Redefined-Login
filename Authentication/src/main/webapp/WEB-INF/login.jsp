@@ -206,13 +206,12 @@ to {
 											<b>Redefined Login!!</b>
 										</h1>
 										<p class="" style="text-align: justify;">Please verify
-											your login attempt, Through safe and redefined login process</p>
+											your login attempt, Through our safe and redefined login process</p>
 										<p class="font-weight-bold text-success">Stay safe from
 											Shoulder Surfing</p>
-										<p class="mb-4" style="text-align: justify;">Lorem ipsum
-											dolor sit amet consectetur elit. Necessitatibus beatae
-											accusamus, ab sit quam, odit fugiat ipsam, error natus eum
-											ea. Expedita, minima soluta nihil molestias a?</p>
+										<p class="mb-4" style="text-align: justify;">
+											
+										</p>
 									</div>
 									<hr>
 									<div class="text-center">
@@ -280,39 +279,6 @@ to {
 						alert("Error Faced, Please try Again!!!!");
 					}
 				});
-				
-				/* $.ajax({
-				    type: "POST",
-				    url: "blocked",
-				    contentType : "application/json; charset=utf-8",
-				    data : userId,
-				   cache : false,
-				    success: function(result) {
-				        var response = result;
-				        
-				      /*   if (response > 0) {
-				           $('#inputUserName').collapse('hide');
-				           $('#inputPassword').collapse('show');
-				           $('#hiddenUserName').val(userId);
-				          //  $('#hidden_userId').val(userId);
-				        } else {
-				            alert("Username does not exist");
-				        } */
-
-				/*  if (response >0) {
-					 $('#inputUserName').collapse('show');
-				     $('#hiddenUserName').val(userId);
-				   //  $('#hidden_userId').val(userId);
-				    
-				 } else {
-					 alert("Account is blocked");
-				 }
-				},
-				error: function(err){
-					alert("Error Faced, Please try Again!!!!");
-				 }
-				}); */
-
 			}
 		}
 	</script>
