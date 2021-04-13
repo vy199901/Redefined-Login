@@ -120,7 +120,7 @@ to {
 										<h1 class="h4 text-gray-900 mb-2 font-weight-bold">
 											<b>Login Here?</b><br>
 										</h1>
-										<span class="text-danger">${error}</span> 
+										<span class="text-danger">${error}</span>
 										<p class="mb-4" style="text-align: justify;">Please enter
 											your USER-NAME, and click on Submit. You will be redirected
 											to enter your password, try the redefined Login Experience!</p>
@@ -134,14 +134,13 @@ to {
 										<button class="btn btn-sm btn-success font-weight-bold"
 											onclick="submitUserName()">SUBMIT</button>
 									</div>
-									
-									
+
+
 									<hr>
 									<div class="text-sm-center">
 										| <a class="small text-decoration-none" href="/register">Create
-											an Account !</a>
-										 ||
-										<a class="small text-decoration-none" href="/reset">Reset Password ?</a> |
+											an Account !</a> || <a class="small text-decoration-none"
+											href="/reset">Reset Password ?</a> |
 									</div>
 								</div>
 							</div>
@@ -154,7 +153,8 @@ to {
 								<div class="p-5">
 									<div class="text-center">
 										<h1 class="h4 text-gray-900 mb-2 font-weight-bold">
-											<b>Verify Password ?</b>  <img src="looking_eye.gif" width=10% height="10%"/>
+											<b>Verify Password ?</b> <img src="looking_eye.gif" width=10%
+												height="10%" />
 										</h1>
 									</div>
 									<form action="" method="POST">
@@ -206,11 +206,14 @@ to {
 											<b>Redefined Login!!</b>
 										</h1>
 										<p class="" style="text-align: justify;">Please verify
-											your login attempt, Through our safe and redefined login process</p>
+											your login attempt, Through our safe and redefined login
+											process</p>
 										<p class="font-weight-bold text-success">Stay safe from
 											Shoulder Surfing</p>
 										<p class="mb-4" style="text-align: justify;">
-											
+											Suppose your password is <span class="font-weight-bold text-success"> "12@A"</span>, then you have to enter like this.<br>
+											<img src="login.gif" />
+											<br>In this "+" is any false characters you want to enter to maintain privacy.
 										</p>
 									</div>
 									<hr>
@@ -249,36 +252,37 @@ to {
 				$(window).bind("load", function() {
 					$('#work-in-progress').fadeOut(100);
 				});
-				$.ajax({
-					type : "POST",
-					url : "validateUserName",
-					contentType : "application/json; charset=utf-8",
-					data : userId,
-					cache : false,
-					success : function(result) {
-						var response = result;
+				$
+						.ajax({
+							type : "POST",
+							url : "validateUserName",
+							contentType : "application/json; charset=utf-8",
+							data : userId,
+							cache : false,
+							success : function(result) {
+								var response = result;
 
-						if (response == 200) {
-							// User Exist Proceed to enter password
-							$('#inputUserName').collapse('hide');
-							$('#inputPassword').collapse('show');
-							$('#hiddenUserName').val(userId);
-							//  $('#hidden_userId').val(userId);
-						} else if (response == 403) {
-							// Account blocked permanently
-							alert("Your Account has been blocked permanently. Please Contact Administrator.");
-						} else if (response == 404) {
-							alert("Username does not exist");
-						} else {
-							// window.location.href = "login";
-							alert("Unecessary Error Faced, Please try again.");
-						}
+								if (response == 200) {
+									// User Exist Proceed to enter password
+									$('#inputUserName').collapse('hide');
+									$('#inputPassword').collapse('show');
+									$('#hiddenUserName').val(userId);
+									//  $('#hidden_userId').val(userId);
+								} else if (response == 403) {
+									// Account blocked permanently
+									alert("Your Account has been blocked permanently. Please Contact Administrator.");
+								} else if (response == 404) {
+									alert("Username does not exist");
+								} else {
+									// window.location.href = "login";
+									alert("Unecessary Error Faced, Please try again.");
+								}
 
-					},
-					error : function(err) {
-						alert("Error Faced, Please try Again!!!!");
-					}
-				});
+							},
+							error : function(err) {
+								alert("Error Faced, Please try Again!!!!");
+							}
+						});
 			}
 		}
 	</script>

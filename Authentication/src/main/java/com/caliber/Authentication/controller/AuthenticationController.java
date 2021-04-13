@@ -130,7 +130,7 @@ public class AuthenticationController {
 			} else if (counter == 3) {
 				userService.setCounter(username, 4);
 			}
-			return "success";
+			return "redirect:success";
 		} else {
 			System.out.println("Password Not Verified");
 
