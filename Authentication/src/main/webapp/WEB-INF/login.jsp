@@ -134,13 +134,15 @@ to {
 										<button class="btn btn-sm btn-success font-weight-bold"
 											onclick="submitUserName()">SUBMIT</button>
 									</div>
-
-
 									<hr>
 									<div class="text-sm-center">
-										| <a class="small text-decoration-none" href="/register">Create
-											an Account !</a> || <a class="small text-decoration-none"
-											href="/reset">Reset Password ?</a> |
+										<div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
+											<a class="btn btn-outline-primary " class="text-decoration-none text-white" href="/register">Create an Account !</a> 
+											<a  class="btn btn-outline-primary " class="text-decoration-none"
+												href="/reset">Reset Password ? </a>
+										  </div>
+										
+										 
 									</div>
 								</div>
 							</div>
@@ -192,10 +194,7 @@ to {
 												class="btn btn-secondary btn-user btn-block font-weight-bolder text-light">Verify
 												Token</button>
 										</div>
-
 									</form>
-
-
 									<hr>
 								</div>
 							</div>
@@ -207,13 +206,43 @@ to {
 										</h1>
 										<p class="" style="text-align: justify;">Please verify
 											your login attempt, Through our safe and redefined login
-											process</p>
-										<p class="font-weight-bold text-success">Stay safe from
+											process. Enter your password bit-by-bit in each of the token boxes with a combination of your real and fake password bits.</p>
+										<p class="text-lg fw-bolder text-success">Stay safe from
 											Shoulder Surfing</p>
-										<p class="mb-4" style="text-align: justify;">
-											Suppose your password is <span class="font-weight-bold text-success"> "12@A"</span>, then you have to enter like this.<br>
-											<img src="login.gif" />
-											<br>In this "+" is any false characters you want to enter to maintain privacy.
+										<p class="" style="text-align: justify;">
+											<span class="text-sm">
+												For further information please view tutorial below.
+											</span> 
+										</p>	
+										<p class="mb-4 text-center">	
+<button type="button" class="btn btn-outline-primary btn-sm fw-bold" data-toggle="modal" data-target="#exampleModalCenter">
+	View Tutorial Here
+</button>
+
+  <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLongTitle">Tutorial eg. Password:"12@A"</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<div class="" style="text-align: justify;">
+				Consider your password is <span class="fw-bolder text-success"> "12@A"</span>, then you have to enter your passwords first bit in the first token space provided as a combination of real and fake bits position of bits doesn't matter in this arrangement. <br> eg.<span class="fw-bolder"> " + + 1 + " </span> ,and hence continue further with next bits.
+			</div>
+			<img src="login.gif" />
+			
+		</div>
+		<div class="">
+			<span class="fw-bolder text-dark">
+				* In this "+" is any false characters you want to enter to maintain privacy.
+			</span>
+		</div>
+	  </div>
+	</div>
+  </div>											
 										</p>
 									</div>
 									<hr>
@@ -229,18 +258,14 @@ to {
 						</div>
 					</div>
 				</div>
-
 			</div>
-
 		</div>
-
 	</div>
 
 	<!-- JavaScript Bundle with Popper -->
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-		crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<script>
 		function submitUserName() {
