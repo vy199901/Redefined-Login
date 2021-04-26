@@ -27,11 +27,13 @@ public class AuthenticationController {
 	@PostMapping(value = "/register")
 	public String registrationPage(@RequestParam(value = "username", required = false) String username,
 			@RequestParam(value = "password", required = false) String password,
-			@RequestParam(value = "emailid", required = false) String emailid, ModelMap model) {
+			@RequestParam(value = "emailid", required = false) String emailid, ModelMap model, RedirectAttributes redirectAttribute) {
 
 		System.out.println(username + " " + password);
 		boolean status = userService.savetoDB(username, password, emailid, model);
 		if (status) {
+			String error = "Your account has been created succesfully, Try logging with your new Account.";
+			redirectAttribute.addFlashAttribute("success", error);
 			return "redirect:login";
 		} else {
 			return "register";
@@ -76,7 +78,7 @@ public class AuthenticationController {
 			if (newpass.equals(retypepass)) {
 				userService.setPassword(username, newpass);
 				error = "Your Password has been reset succesfully, Try logging with your new Password.";
-				redirectAttribute.addFlashAttribute("error", error);
+				redirectAttribute.addFlashAttribute("success", error);
 				return "redirect:login";
 			} else {
 				error = "Password doesn't match, try again";
@@ -98,12 +100,17 @@ public class AuthenticationController {
 		String[] password = str[1].split("=");
 		System.out.println(str[0] + "" + str[1]);
 		System.out.println(username[1] + " " + password[1]);
-		if (userService.getPassword(username[1], password[1])) {
-			 userService.sendOtp(username[1]);
-			return 1;
-		} else {
-			return 0;
+		if(userService.returnCounter(username[1]) != 5) {
+			if (userService.getPassword(username[1], password[1])) {
+				 userService.sendOtp(username[1]);
+				return 1;
+			} else {
+				return 0;
+			}
+		}else {
+			return 301;
 		}
+		
 	}
 	/* Dynamic Token Initialization and Setup */
 

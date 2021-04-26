@@ -205,7 +205,9 @@
 							$('#inputPassword').collapse('show');
 							$('#hiddenUserName').val(userName);
 							$('#hiddenPassword').val(password);
-						}else{
+						}else if(response == 301){
+							alert("Your account has been Blocked Permanently. Please Contact Administrator for further enquiry.");
+						} else{
 							alert("Credentials are incorrect, Please try Again.");
 							}
 						

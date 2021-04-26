@@ -120,7 +120,8 @@ to {
 										<h1 class="h4 text-gray-900 mb-2 font-weight-bold">
 											<b>Login Here?</b><br>
 										</h1>
-										<span class="text-danger">${error}</span>
+										<span class="text-danger fw-bolder">${error}</span>
+										<span class="text-success fw-bolder">${success}</span>
 										<p class="mb-4" style="text-align: justify;">Please enter
 											your USER-NAME, and click on Submit. You will be redirected
 											to enter your password, try the redefined Login Experience!</p>
@@ -230,7 +231,7 @@ to {
 		</div>
 		<div class="modal-body">
 			<div class="" style="text-align: justify;">
-				Consider your password is <span class="fw-bolder text-success"> "12@A"</span>, then you have to enter your passwords first bit in the first token space provided as a combination of real and fake bits position of bits doesn't matter in this arrangement. <br> eg.<span class="fw-bolder"> " + + 1 + " </span> ,and hence continue further with next bits.
+				Consider your password is <span class="fw-bolder text-success"> "12@A"</span>, then you have to enter your passwords first bit in the first token space provided as a combination of real and fake bits, position of bits doesn't matter in this arrangement. <br> eg.<span class="fw-bolder"> " + + 1 + " </span> ,and hence continue further with next bits.
 			</div>
 			<img src="login.gif" />
 			
@@ -263,7 +264,8 @@ to {
 	</div>
 
 	<!-- JavaScript Bundle with Popper -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+		
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -277,8 +279,7 @@ to {
 				$(window).bind("load", function() {
 					$('#work-in-progress').fadeOut(100);
 				});
-				$
-						.ajax({
+				$.ajax({
 							type : "POST",
 							url : "validateUserName",
 							contentType : "application/json; charset=utf-8",
