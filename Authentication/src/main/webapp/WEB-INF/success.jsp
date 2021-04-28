@@ -35,7 +35,7 @@
 									<div class="p-5">
 										<div class="text-center">
 											<h1 class="text-success  text-gray-900 mb-2 font-weight-bold">
-												<b>Login Successfull !!!</b><br>
+												<b>Login Successful !!!</b><br>
 											</h1>
 											<hr>
 											<p class="mb-4" >

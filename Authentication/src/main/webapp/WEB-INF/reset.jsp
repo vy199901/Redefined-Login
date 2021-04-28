@@ -147,11 +147,7 @@
 											<b>Help Section</b>
 										</h1>
 										<p class="text-success" style="text-align: justify;"> OTP has been sent to your registered Email ID.</p>
-										<p class="font-weight-bold text-success">Check Registered Email ID</p>
-										<p class="mb-4" style="text-align: justify;">Lorem ipsum
-											dolor sit amet consectetur elit. Necessitatibus beatae
-											accusamus, ab sit quam, odit fugiat ipsam, error natus eum
-											ea. Expedita, minima soluta nihil molestias a?</p>
+										<p class="mb-4" style="text-align: justify;">Stay safe from Shoulder Surfing</p>
 									</div>
 									<hr>
 									<div class="text-center">

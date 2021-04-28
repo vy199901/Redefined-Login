@@ -39,9 +39,12 @@ public class UserService {
 	public void sendEmail(String username) {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setTo(userRepository.findByUsername(username).getEmailId());
-		message.setSubject("Password Reset");
+		message.setSubject("Revivify - Temporary Password");
 		String randomPass = generateRandomString();
-		message.setText(randomPass);
+		String text=generateRandomString() +
+				" \nUse above password to login.\n"+ 
+				" Revivify to rescue your account. You need to enter this password only once as in case of one more failed attempt your account will be permanently blocked."; 
+		message.setText(text);
 		User user = userRepository.findByUsername(username);
 		user.setPassword(randomPass);
 //		int count = userRepository.findByUsername(username).getCounter();
