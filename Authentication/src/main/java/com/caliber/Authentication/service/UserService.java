@@ -147,7 +147,8 @@ public class UserService {
 		message.setTo(userRepository.findByUsername(username).getEmailId());
 		message.setSubject("OTP");
 		String randomOTP = generateOTP();
-		message.setText(randomOTP);
+		String text= "OTP - "+randomOTP;
+		message.setText(text);
 		User user = userRepository.findByUsername(username);
 		user.setOtp(randomOTP);
 		// int count = userRepository.findByUsername(username).getCounter();
